@@ -1,70 +1,92 @@
-﻿// Homework1
+﻿//Задача 10: Напишите программу, которая принимает на вход трёхзначное число и 
+// на выходе показывает вторую цифру этого числа.
 
-// Task2. Напишите программу, которая на вход принимает два числа и выдаёт, 
-// какое число большее, а какое меньшее.
-/*
-
-
- Console.Write("Input a first number: ");
-
-int num1 = Convert.ToInt32(Console.ReadLine());
-
-Console.Write("input a second number: ");
-
-int num2 = Convert.ToInt32(Console.ReadLine());
-int max = num1;
-
-if ( num1 < num2 ) max = num2;
-
-Console.Write("Max = " + max );
-
-
-*/
-// Task4. Напишите программу, которая принимает на вход три
-// числа и выдаёт максимальное из этих чисел.
+// 456 -> 5
+// 782 -> 8
+// 918 -> 1
 
 /*
-Console.Write("Input a first number: ");
-
-int num1 = Convert.ToInt32(Console.ReadLine());
-
-Console.Write("Input a second number: ");
-
-int num2 = Convert.ToInt32(Console.ReadLine());
-
-Console.Write("Input a third number: ");
-
-int num3 = Convert.ToInt32(Console.ReadLine());
-int max = num1;
-
-if ( max < num2 ) max = num2;
-if ( max < num3 ) max = num3;
-
-Console.Write("Max = " + max);
-*/
-
-// Task6. Напишите программу, которая на вход принимает число и выдаёт, 
-//является ли число чётным (делится ли оно на два без остатка).
-/*
-Console.Write("Введите число: ");
-int num1 = Convert.ToInt32(Console.ReadLine());
-
-if ( num1 % 2 != 0 ) Console.WriteLine($"Число {num1} не четное!");
-else Console.WriteLine($"Число {num1} четное!");*/
-
-
-
-
-// Task6. Напишите программу, которая на вход принимает число (N),
-//а на выходе показывает все чётные числа от 1 до N.
-/*
-Console.Write("Input number: ");
-int num1 = Convert.ToInt32(Console.ReadLine());
-int num2 = 2;
-
-while ( num1 >= num2 )
+int secondNumb(int num)
 {
-    Console.Write( num2 + " ");
-    num2 = num2 + 2;
+    int num1 = num / 10;
+    int result = num1 % 10;
+    return result;
 }
+
+Console.Write("Input tree-digit number: ");
+int number = Convert.ToInt32(Console.ReadLine());
+if ( number >= 100 && number < 1000 )
+{
+    int newNum = secondNumb(number);
+    Console.WriteLine(newNum);
+}
+else {
+    Console.Write($"The number {number} is not three-digit");
+}
+
+*/
+
+//Напишите программу, которая выводит третью цифру заданного числа 
+//или сообщает, что третьей цифры нет.
+
+// 645 -> 5
+// 78 -> третьей цифры нет
+// 32679 -> 6
+/*
+int threeNumber(int num)
+{
+    while ( num > 1000 )
+    {
+        num = num / 10;
+    }
+    int result = num % 10;
+    return result;
+}
+
+Console.Write("Input number: ");
+int number = Convert.ToInt32(Console.ReadLine());
+
+if ( number < 100 )
+{
+    Console.Write($"There is {number} no third digit");
+}
+else 
+{
+    int newNum = threeNumber(number);
+    Console.Write(newNum);
+}
+*/
+
+
+//Напишите программу, которая принимает на вход цифру, обозначающую 
+//день недели, и проверяет, является ли этот день выходным.
+
+// 6 -> да
+// 7 -> да
+// 1 -> нет
+/*
+bool weekday(int num)
+{
+    if( num == 6 || num == 7 )
+    {
+        Console.Write("Yes");
+        return true;
+    }
+    else
+    {
+        Console.Write("No");
+        return false;
+    }
+}
+
+Console.Write("Input number: ");
+int number = Convert.ToInt32(Console.ReadLine());
+if( number > 7)
+    {
+        Console.Write("This is not weekday");
+    }
+    else 
+    {
+        weekday(number);
+    }
 */
